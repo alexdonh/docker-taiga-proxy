@@ -15,6 +15,8 @@ RUN rm default.conf
 COPY nginx.conf nginx_ssl.conf proxy_params /tmp/taiga-conf/
 COPY start.sh /
 
+RUN chmod +x /start.sh || true
+
 EXPOSE 80 443
 
 VOLUME ["/taiga-cert", "/taiga-conf"]
